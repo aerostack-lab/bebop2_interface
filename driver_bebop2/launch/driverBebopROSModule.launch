@@ -1,0 +1,73 @@
+<!-- Launches: driverBebopROSModule -->
+<launch>
+	
+	<arg name="drone_id_namespace"  default="drone4" />
+	<arg name="drone_id_int" 	default="4" />
+	<arg name="my_stack_directory" 	default="$(env AEROSTACK_STACK)" />
+	<group ns="$(arg drone_id_namespace)">
+		
+		<!-- RotationAngles Bebop -->
+		<node name="droneRotationAngles" pkg="driverBebopROSModule" type="rotationAnglesBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+		
+		<!-- Battery Bebop -->
+		<node name="droneBattery" pkg="driverBebopROSModule" type="batteryBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- Altitude Bebop -->
+		<node name="droneAltitude" pkg="driverBebopROSModule" type="altitudeBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- FrontCamera Bebop -->
+		<node name="droneFrontCamera" pkg="driverBebopROSModule" type="frontCameraBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- BottomCamera Bebop -->
+		<node name="droneBottomCamera" pkg="driverBebopROSModule" type="bottomCameraBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+
+		<!-- Command Bebop -->
+		<node name="droneCommand" pkg="driverBebopROSModule" type="commandBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- Drone Status Bebop -->
+		<node name="droneStatus" pkg="driverBebopROSModule"     type="statusBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- GroundSpeed Bebop -->
+		<node name="droneGroundSpeed" pkg="driverBebopROSModule" type="groundSpeedBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+		
+		<!-- Gimbal Bebop -->
+		<node name="droneGimbal" pkg="driverBebopROSModule" type="gimbalBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		<!-- WifiChannel Bebop -->
+		<node name="droneWifiChannel" pkg="driverBebopROSModule" type="wifiChannelBebopROSModule" output="screen">
+			<param name="droneId" value="$(arg drone_id_int)" type="int"/>
+			<param name="stackPath" value="$(arg my_stack_directory)" type="string"/>
+		</node>
+
+		
+
+	</group>
+</launch>

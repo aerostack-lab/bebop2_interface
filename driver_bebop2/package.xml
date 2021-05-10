@@ -1,0 +1,39 @@
+<package>
+	<name>driverBebopROSModule</name>
+	<version>1.0.0</version>
+	<description>
+    		This package is driverBebopROSModule.
+	</description>
+	<author email="zorana.milosevic@alumnos.upm.es"> Zorana Milosevic</author>
+	<maintainer email="zorana.milosevic@alumnos.upm.es">Zorana Milosevic</maintainer>
+  	<license>BSD</license>
+	<url>http://ros.org/wiki/driverOktoROSModule</url>
+
+  	<buildtool_depend>catkin</buildtool_depend>
+
+
+  	<build_depend>roscpp</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<build_depend>geometry_msgs</build_depend>
+	<build_depend>sensor_msgs</build_depend>
+        <build_depend>bebop_msgs</build_depend>
+        <build_depend>droneModuleROS</build_depend>
+	<build_depend>droneMsgsROS</build_depend>
+	<build_depend>lib_cvgutils</build_depend>
+        <build_depend>image_transport</build_depend>
+
+	<run_depend>roscpp</run_depend>
+	<run_depend>std_msgs</run_depend>
+	<run_depend>geometry_msgs</run_depend>
+	<run_depend>sensor_msgs</run_depend>
+        <run_depend>bebop_msgs</run_depend>
+        <run_depend>droneModuleROS</run_depend>
+	<run_depend>droneMsgsROS</run_depend>
+	<run_depend>lib_cvgutils</run_depend>
+        <run_depend>image_transport</run_depend>
+
+
+
+</package>
+
+

@@ -1,0 +1,53 @@
+//////////////////////////////////////////////////////
+//  DroneCommandNode.cpp
+//
+//  Created on: Nov 19, 2015
+//      Author: Zorana Milosevic
+//
+//  Last modification on: Nov 19, 2015
+//      Author: Zorana Milosevic
+//
+//////////////////////////////////////////////////////
+
+
+
+//I/O stream
+//std::cout
+#include <iostream>
+
+
+//ROS
+#include "ros/ros.h"
+
+//parrotARDrone
+#include "droneInps.h"
+
+using namespace std;
+
+
+
+
+int main(int argc,char **argv)
+{
+    //Ros Init
+    ros::init(argc, argv, "droneGimbal");
+    ros::NodeHandle n;
+
+    cout<<"[ROSNODE] Starting droneCommand"<<endl;
+
+    //Vars
+    GimbalCommandROSModule MyGimbalCommandROSModule;
+    MyGimbalCommandROSModule.open(n,"droneGimbal");
+
+    try
+    {
+        //Read messages
+        ros::spin();
+        return 1;
+
+    }
+    catch (std::exception &ex)
+    {
+        std::cout<<"[ROSNODE] Exception :"<<ex.what()<<std::endl;
+    }
+}
